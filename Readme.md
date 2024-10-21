@@ -25,7 +25,7 @@ A backend service for managing daily expenses shared among users. Users can crea
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/expense-sharing-app.git
+   git clone https://github.com/theavitw/Avit_Assigment_ConvinAI.git
    cd expense-sharing-app.
    ```
 2. Install dependencies:
