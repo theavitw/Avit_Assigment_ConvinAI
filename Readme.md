@@ -37,7 +37,7 @@ A backend service for managing daily expenses shared among users. Users can crea
    3. Create a .env file in the root directory with the following content:
 
    ```bash
-   JWT_SECRET=your_jwt_secret_key
+   JWT_KEY=your_jwt_secret_key
    PORT=3000
    ```
 
