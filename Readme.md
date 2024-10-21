@@ -2,6 +2,18 @@
 
 A backend service for managing daily expenses shared among users. Users can create expenses, split them based on different methods, generate and download balance sheets.
 
+## About this project and challanges I have faced
+
+- This project is assignment for backend role.
+- Followed Best Practices for Node.js and MongoDB.
+- Used Postman for testing API endpoints.
+- Used JWT for authentication.
+- Used json2csv for downloading balance sheet.
+- Used bcrypt for password hashing.
+- Used REST API for API endpoints.
+- Followed architecture design principles.
+- No challanges in this project so far.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v14+)
