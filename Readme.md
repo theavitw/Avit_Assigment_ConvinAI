@@ -58,4 +58,4 @@ A backend service for managing daily expenses shared among users. Users can crea
 | /expenses | GET | Get all expenses |
 | /expenses | POST | Create a new expense |
 | /expenses/balance-sheet | GET | Get balance sheet |
-| /expenses/balance-sheet/download | GET | Download balance sheet |
+| /expenses/balance-sheet/download | GET | Download balance sheet of preticular user |
