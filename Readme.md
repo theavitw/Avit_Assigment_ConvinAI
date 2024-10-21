@@ -41,11 +41,18 @@ A backend service for managing daily expenses shared among users. Users can crea
    PORT=3000
    ```
 
-   4. Start the server:
+   4. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
+
+   5.buld:
+
+   ```bash
+   npm run build
+   ```
+
 #### The server will run on http://localhost:3000 by default.
 
 ### API Endpoints
