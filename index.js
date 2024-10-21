@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 const { body, validationResult } = require("express-validator");
 const { authenticate } = require("./middleware/auth");
 const User = require("./models/user");
@@ -52,7 +53,6 @@ app.post(
     }
 
     const { email, name, mobileNumber, password } = req.body;
-    console.log(email, name, mobileNumber, password);
 
     try {
       const existingUser = await User.findOne({ email });
@@ -80,17 +80,14 @@ app.post(
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
 
   try {
     const user = await User.findOne({ email });
-    console.log(user);
     if (!user) {
       return res.status(400).json({ error: "User not found" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
-    console.log(isMatch);
     if (!isMatch) {
       return res.status(400).json({ error: "Invalid credentials" });
     }
@@ -98,10 +95,26 @@ app.post("/login", async (req, res) => {
     const token = jwt.sign({ userId: user._id }, JWT_SECRET, {
       expiresIn: "1h",
     });
-    console.log(token);
     res.status(200).json({ token });
   } catch (error) {
     res.status(500).json({ error: "Error logging in" });
+  }
+});
+
+app.get("/user", authenticate, async (req, res) => {
+
+  const userId = new mongoose.Types.ObjectId(req.userId);
+
+  try {
+    const user = await User.findById(userId).select("-password");
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({ user });
+  } catch (error) {
+    res.status(500).json({ error: "Error retrieving user details" });
   }
 });
 
