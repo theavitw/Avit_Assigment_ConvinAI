@@ -54,7 +54,7 @@ A backend service for managing daily expenses shared among users. Users can crea
 | --- | --- | --- |
 | /login | POST | Login a user |
 | /users | POST | Create a new user |
-| /users | GET | Get all users |
+| /users | GET | Get looged in user details (loggin required) |
 | /expenses | GET | Get all expenses (loggin required)|
 | /expenses | POST | Create a new expense(loggin required) | 
 | /expenses/balance-sheet | GET | Get balance sheet of loggedin user |
