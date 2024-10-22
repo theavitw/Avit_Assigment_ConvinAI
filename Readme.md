@@ -67,4 +67,5 @@ A backend service for managing daily expenses shared among users. Users can crea
 | /expenses/balance-sheet | GET | Get balance sheet of loggedin user (loggin required) |
 | /expenses/balance-sheet/download | GET | Download balance sheet of loggedin user (loggin required) |
 
+## Video Tutorial
 [![Video Information](https://img.youtube.com/vi/AY352eTQSpM/0.jpg)](https://www.youtube.com/watch?v=AY352eTQSpM)
